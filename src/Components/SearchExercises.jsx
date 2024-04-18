@@ -26,6 +26,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         "https://exercisedb.p.rapidapi.com/exercises",
         exerciseOptions
       );
+      // console.log({ exercisesData });
 
       const searchedExercises = exercisesData.filter(
         (exercise) =>
@@ -35,8 +36,9 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           exercise.bodyPart.toLowerCase().includes(search)
       );
 
-      setSearch("");
       setExercises(searchedExercises);
+      // console.log({ searchedExercises });
+      setSearch("");
     }
   };
 
@@ -50,6 +52,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       </Typography>
       <Box position="relative" mb="72px">
         <TextField
+          height="76px"
           sx={{
             input: {
               fontWeight: "700",

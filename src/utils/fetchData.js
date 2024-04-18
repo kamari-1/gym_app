@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const API_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
 
 export const exerciseOptions = {
@@ -18,9 +20,16 @@ export const youtubeOptions = {
 };
 
 export const fetchData = async (url, options) => {
-  const response = await fetch(url, options);
-  const data = await response.json();
+  const response = await axios.get(url, options);
 
-  // console.log(data);
-  return data;
+  // console.log(response.data);
+  return response.data;
 };
+
+// export const fetchData = async (url, options) => {
+//   const response = await fetch(url, options);
+//   const data = await response.json();
+
+//   // console.log(data);
+//   return data;
+// };
